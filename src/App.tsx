@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import {Scoreboard} from "./components/Scoreboard/Scoreboard";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
+    let [count, setCount] = useState<number>(0)
+    let [disabledInc,setDisableInc] = useState<boolean>(false)
+    let [disabledReset,setDisableReset] = useState<boolean>(true)
+
+    const addCount = () => {
+        if (count < 5) {
+            setCount(count + 1)
+            setDisableReset(disabledReset)
+        } else {
+            setDisableInc(!disabledInc)
+            setDisableReset(!disabledReset)
+        }
+    }
+
+         const resetCount = () => {
+            setCount(0)
+             setDisableInc(!disabledInc)
+             setDisableReset(!disabledReset)
+         }
+
+        return (
+            <div className="App">
+                <Scoreboard disabledInc={disabledInc} disabledReset={disabledReset} addCount={addCount} resetCount={resetCount} count={count}/>
+            </div>
+        )
+
+
+}
 export default App;
