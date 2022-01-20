@@ -4,7 +4,7 @@ import s from './SuperButton.module.css'
 type ButtonPropsType = {
     disabled?: boolean
     title: string
-    onClick: () => void
+    onClick?: () => void
 }
 
 export const SuperButton = (props: ButtonPropsType) => {

@@ -8,7 +8,8 @@ type ScoreboardType = {
     resetCount: () => void
 }
 
-export const Scoreboard = ({addCount, count, resetCount, ...props}: ScoreboardType) => {
+export const Scoreboard = ({count, addCount, resetCount, ...props}: ScoreboardType) => {
+
     return (
         <div className={s.container}>
             <div className={s.scoreboard}>

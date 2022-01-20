@@ -1,0 +1,21 @@
+.container {
+    border: 3px solid #01886e;
+    width: 400px;
+    height: 200px;
+    border-radius: 10px;
+    margin-right: 40px;
+    color: cornsilk;
+}
+
+.subscoreboard {
+    border: 2px solid #01886e;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+}
+
+.button {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+}
