@@ -1,4 +1,4 @@
-.incrementButton {
+.Button {
     min-width: 100px;
     font-family: inherit;
     appearance: none;
@@ -11,16 +11,16 @@
     cursor: pointer;
 }
 
-.incrementButton:hover {
+.Button:hover {
     background: #1d49aa;
 }
 
-.incrementButton:focus {
+.Button:focus {
     outline: none;
     box-shadow: 0 0 0 4px #cbd6ee;
 }
 
-.incrementButton[disabled] {
+.Button[disabled] {
     color: #d2d5db;
     background: #6c7589;
     cursor: not-allowed;

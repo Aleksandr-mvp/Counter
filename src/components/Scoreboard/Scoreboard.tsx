@@ -1,13 +1,10 @@
 import React from 'react';
-import {Increment} from "../Increment/Increment";
-import {Reset} from "../Reset/Reset";
 import s from './Scoreboard.module.css'
+import {SuperButton} from "../SuperButton/SuperButton";
 
 type ScoreboardType = {
     count: number
-    disabledInc: boolean
-    disabledReset: boolean
-    addCount: (number: number) => void
+    addCount: () => void
     resetCount: () => void
 }
 
@@ -18,8 +15,8 @@ export const Scoreboard = ({addCount, count, resetCount, ...props}: ScoreboardTy
                 {count}
             </div>
             <div className={s.buttons}>
-                <Increment disabledInc={props.disabledInc} count={count} addCount={addCount}/>
-                <Reset disabledReset={props.disabledReset} resetCount={resetCount} count={count}/>
+                <SuperButton disabled={count === 5} onClick={addCount} title={"Inc"}/>
+                <SuperButton disabled={count === 0} onClick={resetCount} title={"Reset"}/>
             </div>
         </div>
     )
