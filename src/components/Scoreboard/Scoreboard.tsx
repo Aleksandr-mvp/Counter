@@ -4,20 +4,22 @@ import {SuperButton} from "../SuperButton/SuperButton";
 
 type ScoreboardType = {
     count: number
+    minValue: number
+    maxValue: number
     addCount: () => void
     resetCount: () => void
 }
 
-export const Scoreboard = ({count, addCount, resetCount, ...props}: ScoreboardType) => {
+export const Scoreboard = ({count, minValue, maxValue, addCount, resetCount, ...props}: ScoreboardType) => {
 
     return (
         <div className={s.container}>
-            <div className={s.scoreboard}>
+            <div className={count === maxValue ? s.colorCount : s.scoreboard}>
                 {count}
             </div>
             <div className={s.buttons}>
-                <SuperButton disabled={count === 5} onClick={addCount} title={"Inc"}/>
-                <SuperButton disabled={count === 0} onClick={resetCount} title={"Reset"}/>
+                <SuperButton disabled={count === maxValue} onClick={addCount} title={"Inc"}/>
+                <SuperButton disabled={count === minValue} onClick={resetCount} title={"Reset"}/>
             </div>
         </div>
     )

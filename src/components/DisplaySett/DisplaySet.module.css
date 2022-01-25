@@ -19,3 +19,8 @@
     justify-content: space-around;
     padding-top: 10px;
 }
+
+.error {
+    border: 1px solid crimson;
+    background-color: #fc9e9e;
+}

@@ -6,6 +6,7 @@
 }
 
 .container .scoreboard {
+    font-weight: bold;
     font-size: 40px;
     border:2px solid #01886e;
     border-radius: 10px;
@@ -14,11 +15,24 @@
     align-items: center;
     padding: 40px;
     margin: 50px;
-    color:crimson;
+    color: #eae9e9;
 }
 
 .buttons {
     display: flex;
     justify-content: space-around;
+}
+
+.colorCount {
+    color:crimson;
+    font-weight: bold;
+    font-size: 40px;
+    border:2px solid #01886e;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    margin: 50px;
 }
 
